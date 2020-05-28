@@ -1,7 +1,7 @@
 ## How to run the app
 
 Unzip contents of the books downloadable at https://www.gutenberg.org/cache/epub/feeds/rdf-files.tar.zip to: `src/books` , so that these could be find by `streamFilesProcessing`.
-The goal is to have folder structure like `src/books/cache/epub/1/pg1.rdf`
+The goal is to have folder structure like `src/books/cache/epub/1/pg1.rdf`. To not clutter the repository and provide smallest working example I included 2 books inside `src/books/cache/epub` directory.
 
 Start a database, for instance:
 ```
