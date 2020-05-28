@@ -1,9 +1,8 @@
-const streamFilesProcessing = require('../streamFilesProcessing')
-const { assert } = require('../../../test-utils')
+const { streamFilesProcessing } = require('../streamFilesProcessing');
 
-
-describe('streamFilesProcessing', () => {
-    it('returns 1', () => {
-        assert.strictEqual(streamFilesProcessing(), 1)
-    })
-})
+describe.skip('streamFilesProcessing', () => {
+    it.skip(
+        'should find, read parse, extract values and save them to db',
+    );
+    it.skip('should fail gracefully');
+});
