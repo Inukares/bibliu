@@ -1,4 +1,6 @@
-const { get, flatten, map } = require("lodash");
+const get = require('lodash.get')
+const flatten = require('lodash.flatten')
+const map = require('lodash.map')
 const getIdFromString = (string) => /[^/]*$/.exec(string)[0];
 
 const extractAuthors = (object) => {

@@ -3,7 +3,7 @@ const path = require('path');
 const xml2js = require('xml2js');
 
 const parseFile = require('../parseFile');
-const { root, assert } = require('../../../test-utils')
+const { assert } = require('../../../test-utils')
 
 // Should be tested although I couldn't make mock file and gave up to save on time
 describe.skip('parseFile', () => {

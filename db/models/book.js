@@ -44,13 +44,6 @@ module.exports = (sequelize, DataTypes) => {
   );
   Book.associate = function (models) {
     Book.hasMany(models['book_author']);
-    // Book.belongsToMany(models.author, {
-    //   through: {
-    //     model: 'book_author',
-    //     unique: false,
-    //   },
-    //   constraints: false,
-    // })
   };
   return Book;
 };
