@@ -5,10 +5,11 @@ const fs = require("fs-extra");
 
 const readableToString = require("./readableToString");
 const parseFile = require("./parseFile");
-const { extractValues } = require('./extractValues')
+const { extractValues } = require("./extractValues");
+const saveBook = require("../controllers/bookController");
 
 const streamFilesProcessing = (
-  filePath = path.resolve(__dirname, "../books/cache/epub_2")
+  filePath = path.resolve(__dirname, "../books/cache/epub")
 ) =>
   readdir
     .stream(filePath, { filter: /.\.rdf/, deep: 2 })
@@ -18,7 +19,8 @@ const streamFilesProcessing = (
           path.join(filePath, fileName),
           { encoding: "utf-8" }
         );
-        this.push(await readableToString(readableFile, cb));
+        this.push(await readableToString(readableFile));
+        cb();
       })
     )
     .pipe(
@@ -33,8 +35,9 @@ const streamFilesProcessing = (
       })
     )
     .pipe(
-      through2.obj(function (data, ebc, cb) {
-        console.log(data);
+      through2.obj(async function (data, ebc, cb) {
+        await saveBook(data);
+        cb();
       })
     );
 

@@ -5,12 +5,14 @@
     "start": "node index.js",
     "test": "mocha ./src/**/*.test.js",
     "coverage": "nyc npm run test",
-    "format": "prettier --check src/**/*.js"
+    "format": "prettier --write src/**/*.js",
+    "migrate": "node ./db/migrate.js"
   },
   "dependencies": {
     "@jsdevtools/readdir-enhanced": "^6.0.3",
     "dotenv": "^8.2.0",
     "fs-extra": "^9.0.0",
+    "pg": "^8.2.1",
     "sequelize": "^5.21.11",
     "through2": "^3.0.1",
     "xml2js": "^0.4.23"
