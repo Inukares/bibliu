@@ -5,6 +5,7 @@ const fs = require("fs-extra");
 
 const readableToString = require("./readableToString");
 const parseFile = require("./parseFile");
+const { extractValues } = require('./extractValues')
 
 const streamFilesProcessing = (
   filePath = path.resolve(__dirname, "../books/cache/epub_2")
@@ -23,6 +24,17 @@ const streamFilesProcessing = (
     .pipe(
       through2.obj(function (data, enc, cb) {
         parseFile(data, cb);
+      })
+    )
+    .pipe(
+      through2.obj(function (data, enc, cb) {
+        this.push(extractValues(data));
+        cb();
+      })
+    )
+    .pipe(
+      through2.obj(function (data, ebc, cb) {
+        console.log(data);
       })
     );
 
