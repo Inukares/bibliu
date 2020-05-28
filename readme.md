@@ -1,11 +1,19 @@
-Steps I make to run the app:
+## How to run the app
+
+Unzip contents of the books downloadable at https://www.gutenberg.org/cache/epub/feeds/rdf-files.tar.zip to: `src/books` , so that these could be find by `streamFilesProcessing`.
+The goal is to have folder structure like `src/books/cache/epub/1/pg1.rdf`
 
 Start a database, for instance:
 ```
 docker run -e POSTGRES_PASSWORD=password -it -p 5432:5432 postgres
 ```
 
-Run 'migrations'
+Install dependencies
+```
+npm install
+```
+
+Sync database models
 
 ```
 npm run migrate
@@ -15,6 +23,10 @@ Start the app
 ```
 npm start
 ```
+
+
+## Testing
+
 
 Run tests
 ```
@@ -45,3 +57,6 @@ Sequelize cli would be a good starting place for adding it.
 - Error handling - as for now, the errors are just printed to the console.
 As the errors which are happening there are crucial to understanding how data could be cleared
 creating custom errors, possibly behind debug statements would be extremely useful.
+
+I would love to hear your thoughts on that. 
+Enjoy your day!
