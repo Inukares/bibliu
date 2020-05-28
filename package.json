@@ -1,0 +1,29 @@
+{
+  "name": "taskBibliu",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node index.js",
+    "test": "mocha ./src/**/*.test.js",
+    "coverage": "nyc npm run test"
+  },
+  "dependencies": {
+    "@jsdevtools/readdir-enhanced": "^6.0.3",
+    "dotenv": "^8.2.0",
+    "sequelize": "^5.21.11",
+    "through2": "^3.0.1",
+    "xml2js": "^0.4.23"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "eslint": "^7.1.0",
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-prettier": "^3.1.3",
+    "mocha": "^7.2.0",
+    "mock-fs": "^4.12.0",
+    "nyc": "^15.0.1",
+    "prettier": "^2.0.5"
+  }
+}
